@@ -1,7 +1,7 @@
-import { ModeToggle } from "../ui/theme-mode-toggle";
 import { FaTelegram, FaDiscord, FaTwitter } from "react-icons/fa";
 import OngearLogo from "../ui/OngearLogo";
 import Link from "next/link";
+import { Globe } from "lucide-react";
 
 export const Footer = async () => {
   const linksdata = [
@@ -32,7 +32,10 @@ export const Footer = async () => {
   ];
 
   return (
-    <div className="w-full text-sm text-gray-400 mx-auto px-[1rem] flex flex-col items-center bg-[#3b203b] py-8 mt-16">
+    <div className="w-full text-sm relative text-gray-400 mx-auto px-[1rem] flex flex-col items-center bg-[#3b203b] py-8 mt-16">
+      <div className="absolute bottom-0  w-full h-10 bg-black flex items-center justify-center">
+        <span className="text-gray-400">Made with ❤️ by Rahul Soni</span>
+      </div>
       <div className="w-full max-w-[1280px]">
         <div className="flex flex-col gap-4 w-full py-3 justify-between md:flex-row">
           <div className="flex flex-col gap-4">
@@ -62,15 +65,15 @@ export const Footer = async () => {
           <div className="flex flex-col gap-4">
             <span>Follow Us</span>
             <div className="flex gap-3">
-              <div className="bg-[#2463EB] p-2 rounded-full">
-                <FaTelegram />
-              </div>
-              <div className="bg-[#2463EB] p-2 rounded-full">
-                <FaDiscord />
-              </div>
-              <div className="bg-[#2463EB] p-2 rounded-full">
-                <FaTwitter />
-              </div>
+              <Link href="https://rahul-soni.vercel.app" target="_blank" className="bg-[#2463EB] p-2 rounded-full">
+                <Globe className="w-5 h-5 rounded-full" />
+              </Link>
+              <Link href="https://discordapp.com/users/1085286345108357262" target="_blank" className="bg-[#2463EB] p-2 rounded-full">
+                <FaDiscord className="w-5 h-5 rounded-full" />
+              </Link>
+              <Link href="https://x.com/soniRahul3108" target="_blank" className="bg-[#2463EB] p-2 rounded-full">
+                <FaTwitter className="w-5 h-5 rounded-full" />
+              </Link>
             </div>
           </div>
         </div>

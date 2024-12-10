@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div className="rounded-[20px] hover:transform hover:transition hover:duration-150 hover:border-[1px] hover:border-violet-700 bg-[#272727] p-3 2xl:p-4 text-gray-100 md:w-11/12 max-w-2xl">
+    <div className="rounded-[20px] hover:transform hover:transition hover:duration-150 hover:inner-border-[1px] hover:border-violet-700  bg-[#1e1d1d] p-5 2xl:p-7 text-gray-100 md:w-11/12 max-w-2xl">
     <div className="flex gap-3 items-center">
       <img
         className=" rounded-xl w-[98px] h-[98px]"

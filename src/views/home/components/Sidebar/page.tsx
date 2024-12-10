@@ -24,8 +24,8 @@ export function Sidebar() {
     <div
       className={
         expand
-          ? "w-52 transition-all bg-[#1e1f22] flex flex-col gap-10 fixed items-center h-screen overflow-y-auto py-10"
-          : "w-20 bg-[#1e1f22] flex flex-col gap-10  transition-all fixed items-center h-screen overflow-y-auto py-10"
+          ? "w-52 transition-all bg-black flex z-50 flex-col gap-10 fixed items-center h-screen overflow-y-auto py-10"
+          : "w-20 bg-black flex flex-col gap-10  transition-all fixed items-center h-screen overflow-y-auto py-10"
       }
     >
       <button className="w-full flex justify-end px-6 " onClick={toggle}>{expand ? <CircleX  className="w-9 h-9"/>:<ChevronsRight className="w-9 h-9"/>}</button>
