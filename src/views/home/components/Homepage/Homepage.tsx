@@ -111,9 +111,9 @@ function SearchSection() {
               {dropdownlist.map((list,index) => {
                 return (
 
-                  <DropdownMenuItem>
+                  <DropdownMenuItem key={`${index}${Math.random()*3}`}>
                     <div
-                      key={index}
+                      
                       onClick={() => setselectedvalue(list.key)}
                       className=" p-2  hover:cursor-pointer w-full"
                     >
@@ -135,7 +135,7 @@ function SearchSection() {
             <DropdownMenuContent>
               {dropdownlist2.map((list,index) => {
                 return (
-                  <DropdownMenuItem>
+                  <DropdownMenuItem key={`${index}${Math.random()*4}`}>
                     <div
                       key={index}
                       onClick={() => setselectedvalue2(list.key)}

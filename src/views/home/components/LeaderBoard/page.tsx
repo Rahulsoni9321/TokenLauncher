@@ -26,21 +26,22 @@ import {
 } from "@/components/ui/table";
 import Valuetable from "./components/Valuetable";
 import Profittable from "./components/Profittable";
+import Image from "next/image";
 
 const LeaderBoard = () => {
   return (
     <div className="px-2 md:px-6">
       <div className="flex gap-1 md:gap-5 ">
-          <div className="flex text-black text-[10px] md:text-[15px] p-2 rounded-full bg-yellow-400">
-            <Anchortag label="e6lan" href="/"></Anchortag> &nbsp; created &nbsp;{" "}
-            <Anchortag label="HP$UCKS" href="/"></Anchortag>
-          </div>
-          <div className="flex text-black text-[10px] md:text-[15px] p-2 rounded-full bg-green-400">
-            <Anchortag label="e6lan" href="/"></Anchortag>&nbsp; bought 0.86 SOL
-            &nbsp;
-            <Anchortag label="SLOWANA" href="/"></Anchortag>
-          </div>
+        <div className="flex text-black text-[10px] md:text-[15px] p-2 rounded-full bg-yellow-400">
+          <Anchortag label="e6lan" href="/"></Anchortag> &nbsp; created &nbsp;{" "}
+          <Anchortag label="HP$UCKS" href="/"></Anchortag>
         </div>
+        <div className="flex text-black text-[10px] md:text-[15px] p-2 rounded-full bg-green-400">
+          <Anchortag label="e6lan" href="/"></Anchortag>&nbsp; bought 0.86 SOL
+          &nbsp;
+          <Anchortag label="SLOWANA" href="/"></Anchortag>
+        </div>
+      </div>
       <div className="flex flex-col gap-3 pt-[75px] lg:p-[100px]">
         <div className="flex gap-2 md:px-12">
           <div className=" text-white flex flex-col w-7/12 gap-3">
@@ -55,10 +56,13 @@ const LeaderBoard = () => {
             </p>
           </div>
           <div>
-            <img
+            <Image
+              alt="cup"
               className="drop-shadow-[1px_1px_50px_#00FF6C] w-[90px] xs:w-[120px] md:w-[150px] lg:w-[240px]"
               src="/cup.8a58eef443b3f5468701.png"
-            ></img>
+              width={100}
+              height={100}
+            ></Image>
           </div>
         </div>
         <TableContent></TableContent>
@@ -102,14 +106,14 @@ function TableContent() {
         </div>
         <div
           onClick={() => {
-              setprofit(true);
-              setvalue(false);
-              console.log(profit,value)
+            setprofit(true);
+            setvalue(false);
+            console.log(profit, value)
           }}
           className={
             profit
-            ? "flex gap-1 p-4 border-b-2 border-white hover:cursor-pointer"
-            : "flex gap-1 p-4 hover:cursor-pointer"
+              ? "flex gap-1 p-4 border-b-2 border-white hover:cursor-pointer"
+              : "flex gap-1 p-4 hover:cursor-pointer"
           }
         >
           <Profit></Profit>P&L
@@ -123,11 +127,10 @@ function TableContent() {
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {dropdownlist.map((list,index) => {
+            {dropdownlist.map((list, index) => {
               return (
-                <DropdownMenuItem>
+                <DropdownMenuItem key={`${index}${Math.random()}`}>
                   <div
-                    key={`${index}${Math.random()}`}
                     onClick={() => setselectedvalue(list.key)}
                     className=" p-2  hover:cursor-pointer w-full"
                   >
@@ -152,12 +155,12 @@ function TableContent() {
           </span>
         </div>
       </div>
-       
 
-       {
-        value || (!profit && !value) ?<Valuetable></Valuetable> : <Profittable></Profittable>
-       }
-      
+
+      {
+        value || (!profit && !value) ? <Valuetable></Valuetable> : <Profittable></Profittable>
+      }
+
     </div>
   );
 }

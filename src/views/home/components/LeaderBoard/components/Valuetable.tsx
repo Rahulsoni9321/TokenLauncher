@@ -12,6 +12,7 @@ import {
 import { Lightening } from "../../svg/page";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
+import Image from "next/image";
 
 
 
@@ -333,7 +334,7 @@ const Valuetable = () => {
                 {details.id }
               </TableCell>
               <TableCell className="text-center flex gap-2 items-center justify-center">
-                <img  src={details.address.imgsrc}></img>
+                <Image alt="user" src={details.address.imgsrc} width={100} height={100}></Image>
                 {details.address.address}{" "}
                 <span className="text-violet-600 hidden md:block">
                   <Lightening></Lightening>
