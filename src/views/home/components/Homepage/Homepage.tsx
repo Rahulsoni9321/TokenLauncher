@@ -9,12 +9,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Dropdownsvg, Lightening, Searchsvg, Usersvg } from "../svg/page";
 import { useSidebarContext } from "@/providers/SideBarprovider";
+import Image from "next/image";
 
 const Homepage = () => {
 
-  const {expand} = useSidebarContext();
+  const { expand } = useSidebarContext();
   return (
-    <div className={expand ?" px-2 md:px-6 ml-24 transition-all ":"px-2 md:px-6 transition-all"}>
+    <div className={expand ? " px-2 md:px-6 ml-24 transition-all " : "px-2 md:px-6 transition-all"}>
       <div className="flex flex-col gap-8 ">
         <div className="flex gap-1 md:gap-5 ">
           <div className="flex text-black text-[10px] md:text-[15px] p-2 rounded-full bg-yellow-400">
@@ -107,12 +108,12 @@ function SearchSection() {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              {dropdownlist.map((list) => {
+              {dropdownlist.map((list,index) => {
                 return (
-                  //@ts-ignore
+
                   <DropdownMenuItem>
                     <div
-                      key={list.key}
+                      key={index}
                       onClick={() => setselectedvalue(list.key)}
                       className=" p-2  hover:cursor-pointer w-full"
                     >
@@ -132,12 +133,11 @@ function SearchSection() {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              {dropdownlist2.map((list) => {
+              {dropdownlist2.map((list,index) => {
                 return (
-                  //@ts-ignore
                   <DropdownMenuItem>
                     <div
-                      key={list.key}
+                      key={index}
                       onClick={() => setselectedvalue2(list.key)}
                       className=" p-2  w-full hover:cursor-pointer"
                     >
@@ -162,10 +162,11 @@ function TrendingCard() {
           <Lightening></Lightening>
         </div>
         <div className="flex items-center gap-6">
-          <img
+          <Image
             className="w-[80px] xs:w-[90px] md:w-[114px] h-[80px] xs:h-[90px] md:h-[114px]"
             src="/token1.5543ebc5c8d3c1ce44f4.png"
-          ></img>
+            alt="token"
+          ></Image>
           <div className="flex flex-col gap-2 items-start w-full">
             <div className="text-xl lg:text-2xl text-white font-medium">
               $ LOWANA

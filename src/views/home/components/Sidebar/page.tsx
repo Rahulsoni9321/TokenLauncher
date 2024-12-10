@@ -4,6 +4,7 @@ import { Gift, LogOut, Rocket, Trophy,CircleX,ChevronsRight } from "lucide-react
 import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { Grid } from "../svg/page";
+import Image from "next/image";
 
 
 export function Sidebar() {
@@ -31,7 +32,7 @@ export function Sidebar() {
       <button className="w-full flex justify-end px-6 " onClick={toggle}>{expand ? <CircleX  className="w-9 h-9"/>:<ChevronsRight className="w-9 h-9"/>}</button>
       <Link onClick={setalloff} href={"/"}>
         {" "}
-        <img className="w-12  h-12 rounded-full" src="/DALL·E 2024-12-10 10.56.15 - A sleek and modern logo for an application named 'TOKENLAUNCHER' that allows users to create their own tokens on the Solana blockchain. The design fea.webp"></img>
+        <Image alt="Tokenlauncher" className="w-12  h-12 rounded-full" src="/DALL·E 2024-12-10 10.56.15 - A sleek and modern logo for an application named 'TOKENLAUNCHER' that allows users to create their own tokens on the Solana blockchain. The design fea.webp" width={100} height={100}></Image>
       </Link>
       <div
         className={
@@ -43,6 +44,7 @@ export function Sidebar() {
         {sidebaricons.map((icons, index) => {
           return (
             <Link
+              key={`${index}${Math.random()*2}`}
               onClick={onclick[index]}
               className={
                 expand

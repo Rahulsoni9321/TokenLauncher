@@ -123,12 +123,11 @@ function TableContent() {
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {dropdownlist.map((list) => {
+            {dropdownlist.map((list,index) => {
               return (
-                //@ts-ignore
                 <DropdownMenuItem>
                   <div
-                    key={list.key}
+                    key={`${index}${Math.random()}`}
                     onClick={() => setselectedvalue(list.key)}
                     className=" p-2  hover:cursor-pointer w-full"
                   >
